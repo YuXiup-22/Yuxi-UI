@@ -1,0 +1,39 @@
+{
+  "name": "@yuxi-ui/button",
+  "version": "1.0.4",
+  "private": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+  },
+  "scripts": {
+    "build": "tsup  --format cjs,esm --dts",
+    "dev": "tsup  --format cjs,esm --dts --watch",
+    "clean": "rm -rf .turbo node_modules dist"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "5.8.2",
+    "tsup": "^8.x.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

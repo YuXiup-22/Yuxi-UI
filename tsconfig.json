@@ -1,0 +1,26 @@
+{
+  // 推荐将此作为基础配置文件，不包含 'include' 或 'files' 属性
+  // 因为每个子包会定义自己的 'include' 范围
+  "compilerOptions": {
+    "target": "es2020", // 编译目标 JavaScript 版本
+    "lib": ["dom", "dom.iterable", "esnext"], // 引入的运行时库
+    "allowJs": true, // 允许编译 JavaScript 文件
+    "skipLibCheck": true, // 跳过所有声明文件（.d.ts）的类型检查，加快编译速度
+    "esModuleInterop": true, // 允许 CommonJS 模块以 ES Module 方式导入
+    "allowSyntheticDefaultImports": true, // 允许从没有默认导出的模块中导入默认导出
+    "strict": true, // 启用所有严格类型检查选项
+    "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致
+    "noFallthroughCasesInSwitch": true, // 报告 switch 语句中未处理的 fallthrough 情况
+    "module": "esnext", // 模块化方案：ES Modules
+    "moduleResolution": "node", // 模块解析策略：Node.js 风格
+    "resolveJsonModule": true, // 允许导入 .json 文件
+    "isolatedModules": true, // 确保每个文件都可以独立编译（对 Babel 或 SWC 等工具友好）
+    "noEmit": true, // 不生成编译产物（由 Vite/tsup 等构建工具处理）
+    "jsx": "react-jsx", // JSX 工厂函数，React 17+ 推荐
+    "baseUrl": ".",
+    "paths": {
+      "@yuxi-ui/*": ["packages/*/src"]
+    }
+  },
+  "exclude": ["node_modules", "dist"] // 排除的目录，这些目录下的文件不进行类型检查
+}
