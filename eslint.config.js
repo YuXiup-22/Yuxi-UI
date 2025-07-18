@@ -35,6 +35,7 @@ export default [
       ...react.configs.recommended.rules, // 继承 React 推荐规则
       ...reactHooks.configs.recommended.rules, // 继承 React Hooks 推荐规则
       'react/react-in-jsx-scope': 'off', // React 17+ 不再需要显式导入 React
+      'react/no-unescaped-entities': 'off', // 禁止eslint检查html文本中未转义的符号："" <>{} '
     },
   },
 
@@ -57,6 +58,7 @@ export default [
           './tsconfig.json', // 根目录的 tsconfig.json
           './packages/*/tsconfig.json', // 所有子包的 tsconfig.json
           './apps/*/tsconfig.json', // 所有应用的 tsconfig.json (如果存在)
+          './apps/docs/tsconfig.app.json',
         ],
         tsconfigRootDir: import.meta.dirname, // 解析 project 路径的根目录，即 eslint.config.js 所在的目录
       },
