@@ -11,7 +11,8 @@
     "storybook": "storybook dev -p 6006 --config-dir apps/docs/.storybook",
     "version-packages": "changeset version",
     "release": "turbo run build  && changeset publish",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.5",
