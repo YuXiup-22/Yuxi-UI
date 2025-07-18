@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+echo "🧹 正在运行 ESLint & Prettier 检查..."
+npx lint-staged
+
+# 检查 lint-staged 是否有任何修改（工作区是否有未暂存的改动）
+if ! git diff --quiet --exit-code; then
+  echo ""
+  echo "⚠️  暂存工作区 ESLint & Prettier 检查有修改代码"
+  echo "    请阅读修改部分(git diff),决定是否进行操作:"
+  echo "    - 'git add .' 提交新的commit"
+  echo "    - 'git commit --amend' 合并到当前commit"
+  echo "    - 'git stash' 暂时隐藏"
+  echo ""
+  # 这里不阻止提交，而是让用户自己处理。
+  # 如果你希望强制用户处理这些修改才能继续，可以加上 exit 1
+  # exit 1
+fi
+
+echo "✅ 暂存工作区 ESLint & Prettier 检查通过."
