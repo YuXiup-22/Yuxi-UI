@@ -2,3 +2,5 @@
 echo "🐕 正在验证commit msg ..."
 echo ""
 npx commitlint --edit $1
+echo ""
+echo "🐕 commit msg 提交成功"
