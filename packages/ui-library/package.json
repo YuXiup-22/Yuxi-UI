@@ -1,6 +1,6 @@
 {
   "name": "@yuxi-ui/ui-library",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "type": "module",
   "main": "dist/index.cjs",
@@ -26,7 +26,8 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@yuxi-ui/button": "workspace:*"
+    "@yuxi-ui/button": "workspace:*",
+    "@yuxi-ui/click": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=19",

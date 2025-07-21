@@ -7,23 +7,26 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // 注册handlebars辅助函数
+// 大驼峰转换：IconButton，一般用于react组件， Context 对象
 handlebars.registerHelper('pascalCase', (str) => {
   if (typeof str !== 'string' || !str) {
-    return ''; // Or throw new Error(`pascalCase helper expected a string, got ${str}`);
+    return '';
   }
   return str
     .replace(/(?:^|\s|-)\w/g, (match) => match.toUpperCase())
     .replace(/[-_\s]/g, '');
 });
+// 连接转换：icon-button，一般用于文件名，css类名，npm包名
 handlebars.registerHelper('kebabCase', (str) => {
   if (typeof str !== 'string' || !str) {
-    return ''; // Or throw new Error(`pascalCase helper expected a string, got ${str}`);
+    return '';
   }
   return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
 });
+// 小驼峰转换:iconButton,一般用于变量或函数的命名
 handlebars.registerHelper('camelCase', function (str) {
   if (typeof str !== 'string' || !str) {
-    return ''; // Or throw new Error(`pascalCase helper expected a string, got ${str}`);
+    return '';
   }
   return str
     .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
@@ -174,7 +177,7 @@ const createComponent = async () => {
     // 添加src/*.ts
     // todo:先去看如何做按需导入，再决定是否要自动化处理组件包
 
-    console.log(`\n⛷️ Component ${pascalCaseName} created successfully!`);
+    console.log(`\n⛷️  Component ${pascalCaseName} created successfully!`);
     console.log(
       `   Don't forget to run 'pnpm install'  to link the new package.`,
     );

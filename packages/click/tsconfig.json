@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json", // 继承根目录的配置
+  "compilerOptions": {
+    // 可以覆盖或添加特定于此包的 compilerOptions
+    "outDir": "dist", // 指定当前包的输出目录
+    "declaration": true, // 为此包生成 .d.ts 文件
+    "emitDeclarationOnly": true // 只生成 .d.ts 文件，不生成 js 文件（如果构建工具会生成）
+  },
+  "include": ["src"], // 指定当前包需要包含进行类型检查的文件
+  "exclude": ["node_modules", "dist"] // 排除当前包下的这些目录
+}

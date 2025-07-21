@@ -20,16 +20,18 @@ export default defineConfig({
       entry: {
         index: resolve(__dirname, 'src/index.ts'), // 主入口
         button: resolve(__dirname, 'src/button.ts'), // 单独 Button 入口
+        click: resolve(__dirname, 'src/click.ts'),
       },
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom', '@yuxi-ui/button'], // 💥 关键：将独立组件包也外部化
+      external: ['react', 'react-dom', '@yuxi-ui/button', '@yuxi-ui/click'], // 💥 关键：将独立组件包也外部化
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
           '@yuxi-ui/button': 'MyOrgButton', // 给外部化的包提供全局名称（UMD 格式可能需要）
+          '@yuxi-ui/click': 'MyOrgClick', // 给外部化的包提供全局名称（UMD 格式可能需要）
         },
         entryFileNames: ({ name }) => {
           if (name === 'index') return 'index.mjs';
