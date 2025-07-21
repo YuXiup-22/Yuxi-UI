@@ -24,6 +24,7 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser, // 浏览器全局变量
+        ...globals.node,
       },
     },
     settings: {

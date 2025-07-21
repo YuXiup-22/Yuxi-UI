@@ -1,0 +1,15 @@
+import React from 'react';
+
+export interface {{pascalCase componentName}}Props {
+  children: React.ReactNode;
+}
+
+export const {{pascalCase componentName}} = ({ children }: {{pascalCase componentName}}Props) => {
+  return (
+    <div className="{{kebabCase componentName}}">
+      {children}
+    </div>
+  );
+};
+
+{{pascalCase componentName}}.displayName = '{{pascalCase componentName}}';

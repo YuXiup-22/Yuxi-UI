@@ -18,15 +18,15 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./button": {
-      "types": "./dist/button.d.ts",
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.cjs"
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.cjs"
     },
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@yuxi-ui/button": "^1.0.0"
+    "@yuxi-ui/button": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=19",

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "description": "Generates a new component package.",
+  "prompts": [
+    {
+      "name": "name",
+      "type": "text",
+      "message": "What is the name of the new component (e.g., button, card)?"
+    }
+  ],
+  "engine": "handlebars",
+  "transformers": [
+    {
+      "type": "rename",
+      "from": "template/src/{{pascalCase name}}.tsx.hbs",
+      "to": "packages/{{kebabCase name}}/src/{{pascalCase name}}.tsx"
+    },
+    {
+      "type": "rename",
+      "from": "template/src/index.ts.hbs",
+      "to": "packages/{{kebabCase name}}/src/index.ts"
+    },
+    {
+      "type": "rename",
+      "from": "template/package.json.hbs",
+      "to": "packages/{{kebabCase name}}/package.json"
+    },
+    {
+      "type": "rename",
+      "from": "template/tsconfig.json.hbs",
+      "to": "packages/{{kebabCase name}}/tsconfig.json"
+    }
+  ],
+  "actions": [
+    {
+      "type": "copy",
+      "from": "template",
+      "to": "packages/{{kebabCase name}}"
+    },
+    {
+      "type": "append",
+      "path": "packages/ui-library/package.json",
+      "pattern": "\"dependencies\": {",
+      "template": "    \"@yuxi-ui/{{kebabCase name}}\": \"workspace:*\",\n"
+    },
+    {
+      "type": "append",
+      "path": "packages/ui-library/src/index.ts",
+      "pattern": "// Export all components here",
+      "template": "export * from '@yuxi-ui/{{kebabCase name}}';\n"
+    },
+    {
+      "type": "copy",
+      "from": "template/src/index.ts.hbs",
+      "to": "packages/ui-library/src/{{kebabCase name}}.ts"
+    }
+  ],
+  "helpers": {
+    "pascalCase": "(str) => str.replace(/(?:^|\\s|-)\\w/g, (match) => match.toUpperCase()).replace(/[-_\\s]/g, '')",
+    "kebabCase": "(str) => str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase()"
+  }
+}

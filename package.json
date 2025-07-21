@@ -13,11 +13,12 @@
     "release": "turbo run build  && changeset publish",
     "build-storybook": "storybook build",
     "prepare": "husky",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "create-component": "node scripts/create-component.cjs"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+  "generators": {
+    "component": {
+      "path": "generators/component"
     }
   },
   "lint-staged": {
@@ -39,6 +40,7 @@
     "@storybook/addon-docs": "9.0.17",
     "@storybook/addon-vitest": "9.0.17",
     "@storybook/react-vite": "9.0.17",
+    "@types/fs-extra": "^11.0.4",
     "@typescript-eslint/eslint-plugin": "^8.36.0",
     "@typescript-eslint/parser": "^8.36.0",
     "@vitest/browser": "^3.2.4",
@@ -51,8 +53,11 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-storybook": "9.0.17",
+    "fs-extra": "^11.3.0",
     "globals": "^16.3.0",
+    "handlebars": "^4.7.8",
     "husky": "^9.1.7",
+    "inquirer": "^12.7.0",
     "lint-staged": "^16.1.2",
     "playwright": "^1.54.1",
     "prettier": "^3.6.2",
