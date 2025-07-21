@@ -1,1 +1,1 @@
-export * from '@yuxi-ui/click';
+export { Click } from '@yuxi-ui/click';

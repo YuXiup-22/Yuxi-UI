@@ -1,5 +1,14 @@
 # @yuxi-ui/ui-library
 
+## 1.0.4
+
+### Patch Changes
+
+- 修改包内容测试打包体积
+- Updated dependencies
+  - @yuxi-ui/button@1.0.6
+  - @yuxi-ui/click@1.0.6
+
 ## 1.0.3
 
 ### Patch Changes
