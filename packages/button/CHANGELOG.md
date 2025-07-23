@@ -1,5 +1,11 @@
 # @yuxi-ui/button
 
+## 1.0.7
+
+### Patch Changes
+
+- 修改click导出形式
+
 ## 1.0.6
 
 ### Patch Changes
