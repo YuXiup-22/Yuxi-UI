@@ -1,0 +1,92 @@
+// 主样式文件，包含所有css规则
+@import 'variables';
+@import 'mixins';
+
+.#{$prefix-cls} {
+  // 1.所有按钮共享的基础样式
+  @include yuxi-button-base-global();
+  // 2.所有type的基础样式
+  @include yuxi-button-default-sizing();
+  // 3.默认形状的圆角
+  @include yuxi-button-shape-default-radios('middle');
+  // 4.type样式
+  &-default {
+    border: 1px solid #d9d9d9;
+    background-color: #ffffff;
+    color: rgb(0 0 0 / 88%);
+    @include yuxi-button-hover-default-and-dashed();
+  }
+  &-dashed {
+    border: 1px dashed #d9d9d9;
+    background-color: #ffffff;
+    color: rgb(0 0 0 / 88%);
+    @include yuxi-button-hover-default-and-dashed();
+  }
+  &-primary {
+    border: 1px dashed transparent;
+    background-color: #1677ff;
+    color: #fff;
+    &:hover {
+      background-color: #4096ff;
+    }
+  }
+  &-link {
+    border: 1px dashed transparent;
+    background-color: transparent;
+    color: #1677ff;
+    &:hover {
+      color: #69b1ff;
+    }
+  }
+  &-text {
+    border: 1px dashed transparent;
+    background-color: transparent;
+    color: rgb(0 0 0 / 88%);
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+  // 5.size,尺寸样式
+  &-large {
+    @include yuxi-button-size-large();
+    // large尺寸默认shape的圆角
+    @include yuxi-button-shape-default-radios(large);
+  }
+  &-small {
+    @include yuxi-button-size-small();
+    @include yuxi-button-shape-default-radios(small);
+  }
+  // 6.shape形状样式，影响圆角和padding
+  &-round {
+    // 根据不同size的height决定
+    &.#{$prefix-cls}-large {
+      @include yuxi-button-shape-round-radios(40px);
+      padding-inline-start: calc(40px / 2);
+      padding-inline-end: calc(40px / 2);
+    }
+    &.#{$prefix-cls}-middle {
+      @include yuxi-button-shape-round-radios(32px);
+      padding-inline-start: calc(32px / 2);
+      padding-inline-end: calc(32px / 2);
+    }
+    &.#{$prefix-cls}-small {
+      @include yuxi-button-shape-round-radios(24px);
+      padding-inline-start: calc(24px / 2);
+      padding-inline-end: calc(24px / 2);
+    }
+  }
+  &-circle {
+    padding: 0;
+    @include yuxi-button-shape-circle-radios();
+    // 圆圈，宽高相同
+    &.#{$prefix-cls}-small {
+      width: 24px;
+    }
+    &.#{$prefix-cls}-middle {
+      width: 32px;
+    }
+    &.#{$prefix-cls}-large {
+      width: 40px;
+    }
+  }
+}

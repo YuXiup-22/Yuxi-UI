@@ -1,0 +1,65 @@
+// 定义所有可重用的样式片段
+// 1.所有样式的基础
+@mixin yuxi-button-base-global {
+  display: inline-block;
+  font-weight: 400;
+  // 继承父元素的字体样式
+  font-family: inherit;
+  // 移除文本的装饰线，例如超链接的下划线。
+  text-decoration: none;
+  // 避免因文字内容自动换行，尽管没有设置宽度，但是触发到边界的时也会换行
+  white-space: nowrap;
+  // 水平居中
+  text-align: center;
+  background-image: none;
+  cursor: pointer;
+  // 移除掉浏览器默认的focus样式，最好自己添加focus自定义
+  outline: none;
+  // 使得按钮在 :hover、:active、loading 或 disabled 状态之间切换时，视觉上更加流畅
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+// 2.按钮不同type的基础样式（非尺寸相关）
+// 包含 height, border-radius, font-size, padding, color 等在尺寸变化时会改变的值
+// default-sizing:因为size也会改变一些，
+// 没有color，因为不同的type其值不一样
+@mixin yuxi-button-default-sizing() {
+  height: 32px;
+  font-size: 14px;
+  padding: 0 15px;
+}
+
+@mixin yuxi-button-size-large() {
+  height: 40px;
+  font-size: 16px;
+}
+@mixin yuxi-button-size-small() {
+  height: 24px;
+  padding: 0 7px;
+  font-size: 14px;
+}
+// 3.形状相关的圆角混合
+// 默认形状的圆角根据size决定
+@mixin yuxi-button-shape-default-radios($size) {
+  @if $size == 'small' {
+    border-radius: 4px;
+  } @else if($size == 'large') {
+    border-radius: 8px;
+  } @else {
+    border-radius: 6px;
+  }
+}
+// round形状由高度决定
+@mixin yuxi-button-shape-round-radios($height) {
+  border-radius: $height;
+}
+// circle形状是固定的
+@mixin yuxi-button-shape-circle-radios {
+  border-radius: 50%;
+}
+// 4.hover混合，type为default和dashed是一样的
+@mixin yuxi-button-hover-default-and-dashed {
+  &:hover {
+    color: #4096ff;
+    border-color: #4096ff;
+  }
+}

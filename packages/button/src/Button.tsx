@@ -1,27 +1,32 @@
-// import React from 'react';
+import React from 'react';
+import { ButtonProps } from './types';
+import classnames from 'classnames';
+import './style/index.scss';
+export const Button = (props: ButtonProps) => {
+  const {
+    type = 'default',
+    size = 'middle',
+    shape = 'default',
+    children,
+    href,
+    htmlType = 'button',
+    ...rest
+  } = props;
 
-// export interface ButtonProps {
-//   children: React.ReactNode;
-//   onClick?: () => void;
-//   variant?: 'primary' | 'secondary';
-// }
-
-// export const Button: React.FC<ButtonProps> = ({
-//   children,
-//   onClick,
-//   variant = 'primary',
-// }) => {
-//   const baseStyle = 'px-4 py-2 rounded font-semibold';
-//   const variantStyle =
-//     variant === 'primary'
-//       ? 'bg-blue-500 text-white hover:bg-blue-600'
-//       : 'bg-gray-200 text-gray-800 hover:bg-gray-300';
-//   const a = '';
-//   return (
-//     <button className={`${baseStyle} ${variantStyle}`} onClick={onClick}>
-//       {children}
-//     </button>
-//   );
-// };
-
-export const Button = 'this is a Button component';
+  // =============render==============
+  if (href !== undefined) {
+    //
+  }
+  const prefixCls = 'yuxi-button';
+  const classes = classnames(prefixCls, {
+    [`${prefixCls}-${type}`]: type,
+    [`${prefixCls}-${size}`]: size,
+    [`${prefixCls}-${shape}`]: shape !== 'default' && shape,
+  });
+  console.log(classes);
+  return (
+    <button className={classes} type={htmlType} {...rest}>
+      {children}
+    </button>
+  );
+};
