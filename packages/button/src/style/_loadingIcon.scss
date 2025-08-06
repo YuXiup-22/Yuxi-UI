@@ -1,0 +1,35 @@
+@import 'variables';
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.#{$prefix-cls} {
+  &-loading-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    width: 0; // 宽度设置为0，不占据空间
+    height: 0;
+    transition:
+      width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+      opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    svg {
+      display: block;
+    }
+    &-visible {
+      opacity: 1;
+      width: 1rem;
+      height: 1rem;
+      animation: spin 1s linear infinite; // infinite 表示动画会无限次地循环播放
+      // 避免只有svg图标才被选中
+      // svg {
+      //   animation: spin 1s linear infinite; // infinite 表示动画会无限次地循环播放
+      // }
+    }
+  }
+}

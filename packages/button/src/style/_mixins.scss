@@ -17,6 +17,10 @@
   outline: none;
   // 使得按钮在 :hover、:active、loading 或 disabled 状态之间切换时，视觉上更加流畅
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  display: flex;
+  align-items: center;
+  // 若存在icon，给icon和button内容提供间距
+  gap: 8px;
 }
 // 2.按钮不同type的基础样式（非尺寸相关）
 // 包含 height, border-radius, font-size, padding, color 等在尺寸变化时会改变的值
@@ -58,8 +62,23 @@
 }
 // 4.hover混合，type为default和dashed是一样的
 @mixin yuxi-button-hover-default-and-dashed {
-  &:hover {
+  &:not(:disabled)hover {
     color: #4096ff;
     border-color: #4096ff;
   }
+}
+// 5.disabled样式
+@mixin yuxi-button-disabled-base {
+  cursor: not-allowed;
+  color: rgb(0 0 0 / 25%);
+  // pointer-events: none;
+}
+@mixin yuxi-button-disable-primary-dashed-default {
+  border-color: #d9d9d9;
+  background-color: rgb(0 0 0 / 4%);
+}
+// 6.loading
+@mixin yuxi-button-loading {
+  opacity: 0.65;
+  cursor: default;
 }

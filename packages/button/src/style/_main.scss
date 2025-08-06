@@ -23,10 +23,10 @@
     @include yuxi-button-hover-default-and-dashed();
   }
   &-primary {
-    border: 1px dashed transparent;
+    border: 1px solid transparent;
     background-color: #1677ff;
     color: #fff;
-    &:hover {
+    &:not(:disabled)hover {
       background-color: #4096ff;
     }
   }
@@ -34,7 +34,7 @@
     border: 1px dashed transparent;
     background-color: transparent;
     color: #1677ff;
-    &:hover {
+    &:not(:disabled)hover {
       color: #69b1ff;
     }
   }
@@ -42,7 +42,7 @@
     border: 1px dashed transparent;
     background-color: transparent;
     color: rgb(0 0 0 / 88%);
-    &:hover {
+    &:not(:disabled)hover {
       background-color: rgba(0, 0, 0, 0.04);
     }
   }
@@ -80,13 +80,32 @@
     @include yuxi-button-shape-circle-radios();
     // 圆圈，宽高相同
     &.#{$prefix-cls}-small {
-      width: 24px;
+      min-width: 24px;
     }
     &.#{$prefix-cls}-middle {
-      width: 32px;
+      min-width: 32px;
     }
     &.#{$prefix-cls}-large {
-      width: 40px;
+      min-width: 40px;
     }
+  }
+  // 7.引入disabled
+  &:disabled {
+    @include yuxi-button-disabled-base();
+  }
+  &-default,
+  &-primary,
+  &-dashed {
+    &:disabled {
+      @include yuxi-button-disable-primary-dashed-default();
+    }
+  }
+  // 8.loading
+  &-loading {
+    @include yuxi-button-loading();
+  }
+  // 9.iconPosition
+  &-icon-end {
+    flex-direction: row-reverse;
   }
 }
