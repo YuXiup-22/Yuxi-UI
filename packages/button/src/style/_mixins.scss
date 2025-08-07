@@ -62,7 +62,7 @@
 }
 // 4.hover混合，type为default和dashed是一样的
 @mixin yuxi-button-hover-default-and-dashed {
-  &:not(:disabled)hover {
+  &:not(:disabled):hover {
     color: #4096ff;
     border-color: #4096ff;
   }
