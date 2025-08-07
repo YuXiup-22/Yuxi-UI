@@ -1,24 +1,50 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-// import { fn } from '@storybook/test';
+import { fn, within, userEvent, expect } from '@storybook/test';
 
-import { Button } from '../../../../../packages/button/src';
-
+import { ButtonTest } from './clickButton';
 const meta = {
-  component: Button,
+  component: ButtonTest,
   title: 'Button',
   tags: ['autodocs'],
   excludeStories: /.*Data$/,
-  args: {},
-} satisfies Meta<typeof Button>;
+  args: {
+    onClick: fn(),
+  },
+} satisfies Meta<typeof ButtonTest>;
 export default meta;
 type Story = StoryObj<typeof meta>;
-
+export const ClickTest: Story = {
+  play: async ({ canvasElement, args }) => {
+    // 获取 story 的画布
+    const canvas = within(canvasElement);
+    // 3. 找到画布中的按钮
+    // getByRole 是推荐的查找方式，更符合无障碍标准
+    const initButton = await canvas.getByRole('button', {
+      name: '点击我',
+    });
+    // // 4. 模拟用户第一次点击
+    await userEvent.click(initButton);
+    const finalButton = await canvas.getByRole('button', {
+      name: '已经点击1次啦',
+    });
+    await expect(finalButton).toBeInTheDocument();
+    // // 5. 【断言】验证我们的 onClick “间谍”函数是否被调用了1次
+    await expect(args.onClick).toHaveBeenCalledOnce();
+    // // // 6.判断传参是否正确
+    await expect(args.onClick).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: 'click',
+        target: initButton,
+      }),
+    );
+  },
+};
 export const Default: Story = {
   args: {
     type: 'default',
     children: 'Default Button',
-    loading: true,
+    loading: false,
   },
 };
 export const Primary: Story = {

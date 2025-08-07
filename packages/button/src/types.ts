@@ -26,7 +26,16 @@ interface ButtonBaseProps {
   icon?: React.ReactNode;
   iconPosition?: ButtonIconPosition;
 }
-export interface ButtonProps extends ButtonBaseProps {
+type MergedHTMLAttributes = Omit<
+  // 这是最基础、最通用的类型。
+  // 它包含了所有标准 HTML 元素共有的属性，
+  // 比如 id, className, style, title, lang, 以及 data-* 自定义属性等
+  React.HtmlHTMLAttributes<HTMLElement> &
+    React.AudioHTMLAttributes<HTMLElement> &
+    React.ButtonHTMLAttributes<HTMLElement>, //
+  'type' | 'color'
+>;
+export interface ButtonProps extends ButtonBaseProps, MergedHTMLAttributes {
   href?: string;
   htmlType?: ButtonHtmlTypes;
 }

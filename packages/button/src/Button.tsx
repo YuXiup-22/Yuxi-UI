@@ -1,4 +1,5 @@
 import React, {
+  useCallback,
   useEffect,
   useLayoutEffect,
   useMemo,
@@ -41,6 +42,7 @@ export const Button = (props: ButtonProps) => {
     loading = false,
     icon,
     iconPosition = 'start',
+    onClick,
     ...rest
   } = props;
   // debugger;
@@ -101,6 +103,19 @@ export const Button = (props: ButtonProps) => {
         prefixCls="yuxi-button"
       ></LoadingIcon>
     );
+  // ==========click==============
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      if (innerLoading || disabled) {
+        // 阻止点击事件
+        e.preventDefault();
+        return;
+      }
+      // 触发点击回调
+      onClick?.(e);
+    },
+    [innerLoading, disabled, onClick],
+  );
   // =============render==============
   if (href !== undefined) {
     //
@@ -115,7 +130,13 @@ export const Button = (props: ButtonProps) => {
     [`${prefixCls}-icon-${iconPosition}`]: iconPosition !== 'start',
   });
   return (
-    <button className={classes} disabled={disabled} type={htmlType} {...rest}>
+    <button
+      className={classes}
+      disabled={disabled}
+      type={htmlType}
+      onClick={handleClick}
+      {...rest}
+    >
       {iconNode}
       {children}
     </button>
