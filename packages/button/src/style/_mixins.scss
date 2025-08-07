@@ -82,3 +82,15 @@
   opacity: 0.65;
   cursor: default;
 }
+// 7.click事件样式
+@mixin yuxi-button-click-primary {
+  &:not(:disabled):active {
+    background-color: #0958d9;
+  }
+}
+@mixin yuxi-button-click-text {
+  &:not(:disabled):active {
+    color: #0958d9;
+    border-color: #0958d9;
+  }
+}
