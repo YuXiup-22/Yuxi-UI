@@ -21,7 +21,10 @@ handlebars.registerHelper('kebabCase', (str) => {
   if (typeof str !== 'string' || !str) {
     return '';
   }
-  return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+  return str
+    .replace(/([a-z])([A-Z])/g, '$1-$2') // Insert hyphen between lowercase and uppercase
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2') // Handle consecutive capitals (like "HTTPRequest")
+    .toLowerCase();
 });
 // 小驼峰转换:iconButton,一般用于变量或函数的命名
 handlebars.registerHelper('camelCase', function (str) {
