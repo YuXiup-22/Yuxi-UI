@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "@yuxi-ui/button": "workspace:*",
-    "@yuxi-ui/click": "workspace:*"
+    "@yuxi-ui/click": "workspace:*",
+    "@yuxi-ui/config-provider": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=19",
