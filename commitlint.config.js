@@ -1,3 +1,4 @@
+import { readdirSync } from 'fs';
 export default {
   extends: ['@commitlint/config-conventional'], // 继承 Conventional Commits 规范
   // 你可以在这里添加自定义规则，例如：
@@ -22,7 +23,7 @@ export default {
     'scope-enum': [
       2,
       'always',
-      ['button', 'input', 'docs', 'deps', 'release', '*'], // 允许的 scope，* 表示任意
+      ['docs', 'deps', 'release', '*', ...readdirSync('./packages/')], // 允许的 scope，* 表示任意
     ],
     'subject-full-stop': [0, 'never'], // 标题结尾不能有标点符号
     'subject-case': [0, 'never'], // 标题大小写不校验
