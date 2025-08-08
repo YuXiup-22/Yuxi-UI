@@ -1,5 +1,6 @@
 import React, {
   useCallback,
+  useContext,
   useEffect,
   useLayoutEffect,
   useMemo,
@@ -10,6 +11,7 @@ import { ButtonProps } from './types';
 import { LoadingIcon } from './LoadingIcon';
 import classnames from 'classnames';
 import './style/index.scss';
+import { ConfigContext } from '../../config-provider/src/ConfigProvider';
 interface LoadingConfigDelay {
   loading: boolean;
   delay: number;
@@ -46,6 +48,7 @@ export const Button = (props: ButtonProps) => {
     className,
     classNames: customClassNames,
     styles,
+    prefixCls: customPrefixCls,
     ...rest
   } = props;
   // debugger;
@@ -54,6 +57,8 @@ export const Button = (props: ButtonProps) => {
   const iconStyle: React.CSSProperties = {
     ...(styles?.icon || {}),
   };
+  const { getPrefixCls } = useContext(ConfigContext);
+  const prefixCls = getPrefixCls('button', customPrefixCls);
   // =============loading============
   const loadingConfigDelay = useMemo<LoadingConfigDelay>(
     () => getLoadingConfigDelay(loading),
@@ -132,7 +137,6 @@ export const Button = (props: ButtonProps) => {
   if (href !== undefined) {
     //
   }
-  const prefixCls = 'yuxi-button';
   const classes = classnames(
     prefixCls,
     {
