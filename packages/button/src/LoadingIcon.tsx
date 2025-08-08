@@ -6,9 +6,12 @@ interface LoadingIconProps {
   prefixCls: string;
   // isAfterFirstMount: boolean;
   customIcon?: React.ReactNode;
+  customClassNames?: string;
+  customStyle?: React.CSSProperties;
 }
 export const LoadingIcon = (props: LoadingIconProps) => {
-  const { loading, prefixCls, customIcon } = props;
+  const { loading, prefixCls, customIcon, customClassNames, customStyle } =
+    props;
   // 使得icon在第一次挂载后再执行动画,icon自己控制自己的挂载状态
   // 和动画的执行时机，不通过父组件传递；
   const [isVisible, setVisible] = useState(false);
@@ -28,13 +31,17 @@ export const LoadingIcon = (props: LoadingIconProps) => {
   // 使用css来处理显示图标，避免对dom频繁增删
   // 而且 CSS 动画（特别是 transform 和 opacity）可以由GPU（图形处理器）加速
   // 不占用主线程资源
-  const cls = classnames(`${prefixCls}-loading-icon`, {
-    [`${prefixCls}-loading-icon-visible`]: isVisible,
-  });
+  const cls = classnames(
+    `${prefixCls}-loading-icon`,
+    {
+      [`${prefixCls}-loading-icon-visible`]: isVisible,
+    },
+    customClassNames,
+  );
   return (
     <>
       {isVisible ? (
-        <span className={cls}>
+        <span className={cls} style={customStyle}>
           {customIcon ?? (
             <svg
               viewBox="0 0 1024 1024" //坐标系统 min-x min-y maxWidth maxHeight

@@ -43,9 +43,17 @@ export const Button = (props: ButtonProps) => {
     icon,
     iconPosition = 'start',
     onClick,
+    className,
+    classNames: customClassNames,
+    styles,
     ...rest
   } = props;
   // debugger;
+  // 获取icon的类名
+  const iconClass = classnames(customClassNames?.icon);
+  const iconStyle: React.CSSProperties = {
+    ...(styles?.icon || {}),
+  };
   // =============loading============
   const loadingConfigDelay = useMemo<LoadingConfigDelay>(
     () => getLoadingConfigDelay(loading),
@@ -95,12 +103,16 @@ export const Button = (props: ButtonProps) => {
 
   let iconNode =
     icon && !innerLoading ? (
-      <span>{icon}</span>
+      <span className={iconClass} style={iconStyle}>
+        {icon}
+      </span>
     ) : (
       <LoadingIcon
         loading={innerLoading}
         customIcon={loadingConfigDelay.icon}
         prefixCls="yuxi-button"
+        customClassNames={iconClass}
+        customStyle={iconStyle}
       ></LoadingIcon>
     );
   // ==========click==============
@@ -121,14 +133,18 @@ export const Button = (props: ButtonProps) => {
     //
   }
   const prefixCls = 'yuxi-button';
-  const classes = classnames(prefixCls, {
-    // shape默认的样式不用给出类名，已经放在基础中，且type和shape默认是一样的，避免冲突shape没有默认的类名
-    [`${prefixCls}-${shape}`]: shape !== 'default' && shape,
-    [`${prefixCls}-${type}`]: type,
-    [`${prefixCls}-${size}`]: size,
-    [`${prefixCls}-loading`]: innerLoading,
-    [`${prefixCls}-icon-${iconPosition}`]: iconPosition !== 'start',
-  });
+  const classes = classnames(
+    prefixCls,
+    {
+      // shape默认的样式不用给出类名，已经放在基础中，且type和shape默认是一样的，避免冲突shape没有默认的类名
+      [`${prefixCls}-${shape}`]: shape !== 'default' && shape,
+      [`${prefixCls}-${type}`]: type,
+      [`${prefixCls}-${size}`]: size,
+      [`${prefixCls}-loading`]: innerLoading,
+      [`${prefixCls}-icon-${iconPosition}`]: iconPosition !== 'start',
+    },
+    className,
+  );
   return (
     <button
       className={classes}

@@ -25,6 +25,10 @@ interface ButtonBaseProps {
   loading?: boolean | LoadingConfig;
   icon?: React.ReactNode;
   iconPosition?: ButtonIconPosition;
+  className?: string;
+  classNames?: { icon: string };
+  styles?: { icon: React.CSSProperties };
+  prefixCls?: string;
 }
 type MergedHTMLAttributes = Omit<
   // 这是最基础、最通用的类型。
