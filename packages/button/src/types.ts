@@ -16,7 +16,7 @@ export interface LoadingConfig {
   delay?: number;
   icon?: React.ReactNode;
 }
-interface ButtonBaseProps {
+export interface ButtonBaseProps {
   type?: ButtonTypes;
   size?: ButtonSizes;
   shape?: ButtonShapes;

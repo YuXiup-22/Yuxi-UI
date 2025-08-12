@@ -10,7 +10,8 @@ import React, {
 import { ButtonProps } from './types';
 import { LoadingIcon } from './LoadingIcon';
 import classnames from 'classnames';
-import './style/index.scss';
+// import './style/index.scss';
+import { useButtonStyles } from './style/cssinjs';
 import { ConfigContext } from '../../config-provider/src/ConfigProvider';
 interface LoadingConfigDelay {
   loading: boolean;
@@ -137,7 +138,18 @@ export const Button = (props: ButtonProps) => {
   if (href !== undefined) {
     //
   }
+  const d = useButtonStyles({
+    type,
+    shape,
+    size,
+    innerLoading,
+    iconPosition,
+    prefixCls,
+  });
+  console.log(d, 'ddd');
   const classes = classnames(
+    d.styles,
+
     prefixCls,
     {
       // shape默认的样式不用给出类名，已经放在基础中，且type和shape默认是一样的，避免冲突shape没有默认的类名
@@ -149,6 +161,11 @@ export const Button = (props: ButtonProps) => {
     },
     className,
   );
+  const finalcs = d.cx(d.styles);
+  console.log(finalcs);
+  // console.log(cs, 'ddddd');
+  // const finalcs = classnames(cs['yuxi-button'], cs['yuxi-button-default']);
+
   return (
     <button
       className={classes}
