@@ -10,7 +10,6 @@ import React, {
 import { ButtonProps } from './types';
 import { LoadingIcon } from './LoadingIcon';
 import classnames from 'classnames';
-// import './style/index.scss';
 import { useButtonStyles } from './style/cssinjs';
 import { ConfigContext } from '../../config-provider/src/ConfigProvider';
 interface LoadingConfigDelay {
@@ -138,12 +137,11 @@ export const Button = (props: ButtonProps) => {
   if (href !== undefined) {
     //
   }
-  const d = useButtonStyles({
+  const { styles: contextStyle } = useButtonStyles({
     prefixCls,
   });
-  console.log(d, 'ddd');
   const classes = classnames(
-    d.styles,
+    contextStyle,
     prefixCls,
     {
       // shape默认的样式不用给出类名，已经放在基础中，且type和shape默认是一样的，避免冲突shape没有默认的类名
