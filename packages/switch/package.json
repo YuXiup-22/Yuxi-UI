@@ -1,6 +1,6 @@
 {
-  "name": "@yuxi-ui/{{kebabCase componentName}}",
-  "version": "1.0.0",
+  "name": "@yuxi-ui/switch",
+  "version": "1.0.4",
   "private": false,
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
