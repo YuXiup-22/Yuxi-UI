@@ -32,12 +32,12 @@ const genSwitchStyle = (
       cursor: 'pointer', // 鼠标悬浮时显示“小手”光标，提示用户这是可点击的
       transition: 'all 0.2s', // 核心：为所有可动画的属性添加过渡效果，实现平滑动画
       userSelect: 'none', //防止用户在快速点击时意外选中文本（如“开”/“关”）
-      ['&:hover']: {
+      ['&:not(:disabled):hover']: {
         background: token.hoverBackground,
       },
       [`&.${prefixCls}-checked`]: {
         backgroundColor: token.checkedBackground,
-        ['&:hover']: {
+        ['&:not(:disabled):hover']: {
           backgroundColor: token.checkedHoverBackground,
         },
       },
@@ -66,9 +66,24 @@ const genHandleStyle = (
     },
   };
 };
+const genDisabledStyle = (
+  token: stringifield<SwitchDefaultToken>,
+  prefixCls: string,
+): CSSObject => {
+  return {
+    [`&.${prefixCls}&.${prefixCls}-disabled`]: {
+      cursor: 'not-allowed',
+      opacity: token.disabledOpacity,
+    },
+  };
+};
 export const genCompoentStyle = (
   token: stringifield<SwitchDefaultToken>,
   prefixCls: string = 'yuxi',
 ): Array<CSSObject> => {
-  return [genSwitchStyle(token, prefixCls), genHandleStyle(token, prefixCls)];
+  return [
+    genSwitchStyle(token, prefixCls),
+    genHandleStyle(token, prefixCls),
+    genDisabledStyle(token, prefixCls),
+  ];
 };

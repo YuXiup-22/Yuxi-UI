@@ -13,10 +13,23 @@ const meta = {
   args: {
     ...ActionsData,
   },
+  argTypes: {
+    disabled: {
+      description: '禁用',
+      defaultValue: {
+        summary: 'false',
+      },
+    },
+  },
 } satisfies Meta<typeof Switch>;
 export default meta;
 type Story = StoryObj<typeof meta>;
-
+export const BaseStyle: Story = {
+  args: {
+    disabled: false,
+    value: false,
+  },
+};
 /**
  * 非受控模式测试自动化测试play
  * 思路：验证组件 自治性

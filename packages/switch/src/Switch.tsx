@@ -10,7 +10,13 @@ import { ConfigContext } from '../../config-provider/src/index';
 import { SwitchProps } from './type';
 import { useSwitchStyles } from './style/index';
 export const Switch = (props: SwitchProps) => {
-  const { prefixCls: customPrefixCls, value, defaultValue, onChange } = props;
+  const {
+    prefixCls: customPrefixCls,
+    value,
+    defaultValue,
+    onChange,
+    disabled = false,
+  } = props;
   const [mergedChecked, setMergedChecked] = useMergedValue(false, {
     value,
     defaultValue,
@@ -55,6 +61,7 @@ export const Switch = (props: SwitchProps) => {
   });
   const trackCls = classnames(styles, prefixCls, {
     [`${prefixCls}-checked`]: mergedChecked,
+    [`${prefixCls}-disabled`]: disabled,
   });
   return (
     <button
@@ -63,6 +70,7 @@ export const Switch = (props: SwitchProps) => {
       className={trackCls}
       aria-checked={mergedChecked}
       onClick={handleChecked}
+      disabled={disabled}
     >
       <div className={`${prefixCls}-handle`}></div>
     </button>

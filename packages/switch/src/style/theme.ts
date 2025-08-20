@@ -9,6 +9,7 @@ export interface SwitchDefaultToken {
   hoverBackground: string;
   checkedBackground: string;
   checkedHoverBackground: string;
+  disabledOpacity: number;
   // handle
   handleBackground: string;
   handleSize: string;
@@ -25,6 +26,7 @@ export const DefaultTheme: SwitchDefaultToken = {
   hoverBackground: 'rgba(0,0,0,0.45)',
   checkedBackground: '#1677ff',
   checkedHoverBackground: '#4096ff',
+  disabledOpacity: 0.65,
   // handle
   handleBackground: '#ffffff',
   handleSize: '18px',
