@@ -2,7 +2,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  // useRef,
+  useRef,
   useState,
 } from 'react';
 import classnames from 'classnames';
@@ -106,17 +106,19 @@ const useMergedValue = <T,>(
     },
     [isControlled, onChange, mergedValue],
   );
+  const isFirstRender = useRef(true);
   // 补充：受控到非受控时，
   // 1.状态保持一致版：需要同步受控时的状态给当前的state,避免模式改变时，状态发生变化
   // 2.防御版本：状态为默认，被剥夺控制权后，重置状态
   // 为了安全性，选择防御版本：
   useEffect(() => {
-    if (!isControlled) {
+    if (!isControlled && !isFirstRender.current) {
       // 在明知道vlaue为undefined时，为什么还要设置？
       // 若不设置，innerValue可能出现一个错误的，设置为undefined中性，
       // 只是为了避免可能导致bug的错误innerValue的出现，毕竟多次输入或者切换，不知道此时innerValue为何值
       setInnerValue(value!);
     }
+    isFirstRender.current = false;
   }, [value, isControlled]);
   return [mergedValue, triggerChange];
 };
