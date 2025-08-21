@@ -16,6 +16,8 @@ export const Switch = (props: SwitchProps) => {
     defaultValue,
     onChange,
     disabled = false,
+    checkedChildren,
+    unCheckedChildren,
   } = props;
   const [mergedChecked, setMergedChecked] = useMergedValue(false, {
     value,
@@ -73,6 +75,12 @@ export const Switch = (props: SwitchProps) => {
       disabled={disabled}
     >
       <div className={`${prefixCls}-handle`}></div>
+      <span className={`${prefixCls}-inner`}>
+        <span className={`${prefixCls}-inner-checked`}>{checkedChildren}</span>
+        <span className={`${prefixCls}-inner-unchecked`}>
+          {unCheckedChildren}
+        </span>
+      </span>
     </button>
   );
 };

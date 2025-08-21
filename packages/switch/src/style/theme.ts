@@ -14,6 +14,11 @@ export interface SwitchDefaultToken {
   handleBackground: string;
   handleSize: string;
   trackPadding: string;
+  handleActiveInset: string;
+  // inner
+  innerTextColor: string;
+  innerMaxMargin: string;
+  innerMinMargin: string;
 }
 export const DefaultTheme: SwitchDefaultToken = {
   // base
@@ -31,4 +36,9 @@ export const DefaultTheme: SwitchDefaultToken = {
   handleBackground: '#ffffff',
   handleSize: '18px',
   trackPadding: '2px',
+  handleActiveInset: '30%',
+  // inner
+  innerTextColor: '#fff',
+  innerMaxMargin: '24px',
+  innerMinMargin: '9px',
 };
