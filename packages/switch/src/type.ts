@@ -7,4 +7,5 @@ export interface SwitchProps {
   disabled?: boolean;
   checkedChildren?: React.ReactNode;
   unCheckedChildren?: React.ReactNode;
+  loadding?: boolean;
 }

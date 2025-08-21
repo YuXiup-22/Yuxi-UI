@@ -160,6 +160,44 @@ const genInnerStyle = (
     },
   };
 };
+const genLoadingStyle = (
+  token: stringifield<SwitchDefaultToken>,
+  prefixCls: string = 'yuxi',
+): CSSObject => {
+  return {
+    [`&.${prefixCls}-loading`]: {
+      [`.${prefixCls}-handle`]: {
+        [`.${prefixCls}-loading-icon`]: {
+          display: 'inline-block',
+          width: '1rem',
+          height: '1rem',
+          position: 'relative',
+          top: `calc( calc(${token.handleSize} - ${token.fontSize}) / 2 )`,
+          verticalAlign: 'top',
+          animation: `spin 1s linear infinite`,
+          [`.${prefixCls}-loading-icon-wrap`]: {
+            width: '1rem',
+            height: '1rem',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          },
+        },
+        [`@keyframes spin`]: {
+          '0%': {
+            transform: 'rotate(0deg)',
+          },
+          '100%': {
+            transform: ' rotate(360deg)',
+          },
+        },
+      },
+      [`&.${prefixCls}-checked`]: {
+        color: token.checkedBackground,
+      },
+    },
+  };
+};
 export const genCompoentStyle = (
   token: stringifield<SwitchDefaultToken>,
   prefixCls: string = 'yuxi',
@@ -169,5 +207,6 @@ export const genCompoentStyle = (
     genHandleStyle(token, prefixCls),
     genDisabledStyle(token, prefixCls),
     genInnerStyle(token, prefixCls),
+    genLoadingStyle(token, prefixCls),
   ];
 };
