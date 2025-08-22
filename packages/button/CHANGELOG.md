@@ -1,5 +1,11 @@
 # @yuxi-ui/button
 
+## 1.0.8
+
+### Patch Changes
+
+- switch组件及依赖包开发完成
+
 ## 1.0.7
 
 ### Patch Changes

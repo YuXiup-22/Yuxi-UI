@@ -1,5 +1,15 @@
 # @yuxi-ui/ui-library
 
+## 1.0.6
+
+### Patch Changes
+
+- switch组件及依赖包开发完成
+- Updated dependencies
+  - @yuxi-ui/switch@1.0.5
+  - @yuxi-ui/button@1.0.8
+  - @yuxi-ui/config-provider@1.0.5
+
 ## 1.0.5
 
 ### Patch Changes
