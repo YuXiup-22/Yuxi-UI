@@ -1,9 +1,9 @@
 import { createStyles } from 'antd-style';
-import { ButtonBaseProps } from '../../types';
+import type { ButtonBaseProps } from '../../types';
 import { genCompoentStyle } from './genComponentStyle';
 import { DefaultTheme } from './theme';
 import { tokenToCSSVar } from './tokenToCSSVar';
-type ButtonStyleProps = Pick<ButtonBaseProps, 'prefixCls'>;
+export type ButtonStyleProps = Pick<ButtonBaseProps, 'prefixCls'>;
 
 export const useButtonStyles = createStyles<ButtonStyleProps>(
   ({ css }, props: ButtonStyleProps) => {

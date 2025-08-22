@@ -1,7 +1,7 @@
-import { CSSObject } from 'antd-style';
-import { ButtonDefaultToken } from './theme';
-import { stringifield } from './tokenToCSSVar';
-import { ButtonStyleProps } from './styleProvider';
+import type { CSSObject } from 'antd-style';
+import type { ButtonDefaultToken } from './theme';
+import type { stringifield } from './tokenToCSSVar';
+import type { ButtonBaseProps } from '../../types';
 
 const generateBaseStyles = (
   token: stringifield<ButtonDefaultToken>,
@@ -43,7 +43,7 @@ const generateBaseStyles = (
   };
 };
 const generateTypeStyle = (
-  type: ButtonStyleProps['type'],
+  type: ButtonBaseProps['type'],
   token: stringifield<ButtonDefaultToken>,
 ): CSSObject => {
   let backgroundColor;
@@ -106,7 +106,7 @@ const generateTypeStyle = (
 
 export const genCompoentStyle = (
   token: stringifield<ButtonDefaultToken>,
-  props: ButtonStyleProps,
+  props: Pick<ButtonBaseProps, 'prefixCls'>,
 ): CSSObject => {
   const { prefixCls = 'yuxi' } = props;
 

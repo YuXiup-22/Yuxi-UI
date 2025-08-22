@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 import { ConfigContext } from '../../config-provider/src/index';
-import { SwitchProps } from './type';
+import type { SwitchProps } from './type';
 import { useSwitchStyles } from './style/index';
 export const Switch = (props: SwitchProps) => {
   const {

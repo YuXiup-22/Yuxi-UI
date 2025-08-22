@@ -1,5 +1,5 @@
 import { createStyles } from 'antd-style';
-import { SwitchProps } from '../type';
+import type { SwitchProps } from '../type';
 import { genCompoentStyle } from './genComponentStyle';
 import { DefaultTheme } from './theme';
 import { myDeepMerge } from './deepMerge';

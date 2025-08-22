@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ButtonProps } from './types';
+import type { ButtonProps } from './types';
 import { LoadingIcon } from './LoadingIcon';
 import classnames from 'classnames';
 import { useButtonStyles } from './style/cssinjs';

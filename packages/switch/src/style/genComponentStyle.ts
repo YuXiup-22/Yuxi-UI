@@ -1,5 +1,5 @@
-import { SwitchDefaultToken } from './theme';
-import { CSSObject } from 'antd-style';
+import type { SwitchDefaultToken } from './theme';
+import type { CSSObject } from 'antd-style';
 type stringifield<T> = {
   [k in keyof T]: string;
 };
