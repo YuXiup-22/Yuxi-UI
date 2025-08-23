@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Button, type ButtonProps } from '../../../../../packages/button/src';
+// import { Button, type ButtonProps } from '../../../../../packages/button/src';
+import { Button, type ButtonProps } from '@yuxi-ui/button';
 interface ButtonTestProps extends ButtonProps {
   isClickAction?: boolean;
 }

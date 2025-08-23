@@ -1,5 +1,16 @@
 # @yuxi-ui/ui-library
 
+## 1.0.7
+
+### Patch Changes
+
+- efe5bd6: 调整打包范围
+- Updated dependencies [efe5bd6]
+- Updated dependencies [ac2f4cf]
+  - @yuxi-ui/config-provider@1.0.6
+  - @yuxi-ui/button@1.0.9
+  - @yuxi-ui/switch@1.0.6
+
 ## 1.0.6
 
 ### Patch Changes

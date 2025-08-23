@@ -1,7 +1,8 @@
-import { Switch } from '../../../../../packages/switch/src';
+// import { Switch } from '../../../../../packages/switch/src';
 import { fn, within, userEvent, expect } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
+import { Switch } from '@yuxi-ui/switch';
 const ActionsData = {
   onChange: fn(),
 };
