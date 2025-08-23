@@ -17,6 +17,7 @@
     "isolatedModules": true, // 确保每个文件都可以独立编译（对 Babel 或 SWC 等工具友好）
     "noEmit": true, // 不生成编译产物（由 Vite/tsup 等构建工具处理）
     "jsx": "react-jsx", // JSX 工厂函数，React 17+ 推荐
+    "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
       "@yuxi-ui/*": ["packages/*/src"]
