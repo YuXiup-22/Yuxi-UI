@@ -1,5 +1,13 @@
 # @yuxi-ui/switch
 
+## 1.0.7
+
+### Patch Changes
+
+- npm包和仓库不一致，同步
+- Updated dependencies
+  - @yuxi-ui/util@1.0.2
+
 ## 1.0.6
 
 ### Patch Changes

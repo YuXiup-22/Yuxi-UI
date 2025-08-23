@@ -1,5 +1,11 @@
 # @yuxi-ui/util
 
+## 1.0.2
+
+### Patch Changes
+
+- npm包和仓库不一致，同步
+
 ## 1.0.1
 
 ### Patch Changes

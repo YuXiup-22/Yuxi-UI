@@ -1,5 +1,14 @@
 # docs
 
+## 0.0.3
+
+### Patch Changes
+
+- npm包和仓库不一致，同步
+- Updated dependencies
+  - @yuxi-ui/button@1.0.10
+  - @yuxi-ui/switch@1.0.7
+
 ## 0.0.2
 
 ### Patch Changes

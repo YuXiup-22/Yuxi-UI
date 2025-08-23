@@ -1,5 +1,15 @@
 # @yuxi-ui/ui-library
 
+## 1.0.8
+
+### Patch Changes
+
+- npm包和仓库不一致，同步
+- Updated dependencies
+  - @yuxi-ui/config-provider@1.0.7
+  - @yuxi-ui/button@1.0.10
+  - @yuxi-ui/switch@1.0.7
+
 ## 1.0.7
 
 ### Patch Changes

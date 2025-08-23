@@ -1,5 +1,11 @@
 # @yuxi-ui/config-provider
 
+## 1.0.7
+
+### Patch Changes
+
+- npm包和仓库不一致，同步
+
 ## 1.0.6
 
 ### Patch Changes
