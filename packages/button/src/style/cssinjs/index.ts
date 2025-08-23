@@ -2,7 +2,7 @@ import { createStyles } from 'antd-style';
 import type { ButtonBaseProps } from '../../types';
 import { genCompoentStyle } from './genComponentStyle';
 import { DefaultTheme } from './theme';
-import { tokenToCSSVar } from './tokenToCSSVar';
+import { tokenToCSSVar } from '@yuxi-ui/util';
 export type ButtonStyleProps = Pick<ButtonBaseProps, 'prefixCls'>;
 
 export const useButtonStyles = createStyles<ButtonStyleProps>(

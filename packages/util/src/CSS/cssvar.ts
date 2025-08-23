@@ -1,7 +1,7 @@
-export type stringifield<T> = {
+type stringifield<T> = {
   [k in keyof T]: string;
 };
-export const tokenToCSSVar = <T extends Record<string, any>>(
+const tokenToCSSVar = <T extends Record<string, any>>(
   token: T,
   prefixCls: string,
 ) => {
@@ -26,3 +26,4 @@ const camelToKebab = (val: string) => {
     .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2') // Handle consecutive capitals (like "HTTPRequest")
     .toLowerCase();
 };
+export { type stringifield, tokenToCSSVar };

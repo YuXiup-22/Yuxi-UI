@@ -2,7 +2,7 @@ import { createStyles } from 'antd-style';
 import type { SwitchProps } from '../type';
 import { genCompoentStyle } from './genComponentStyle';
 import { DefaultTheme } from './theme';
-import { myDeepMerge } from './deepMerge';
+import { myDeepMerge } from '@yuxi-ui/util';
 type SwitchPropsStyle = Pick<SwitchProps, 'prefixCls'>;
 export const useSwitchStyles = createStyles<SwitchPropsStyle>(
   ({ css }, props: SwitchPropsStyle) => {

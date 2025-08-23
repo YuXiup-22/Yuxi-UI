@@ -1,8 +1,7 @@
 import type { CSSObject } from 'antd-style';
 import type { ButtonDefaultToken } from './theme';
-import type { stringifield } from './tokenToCSSVar';
 import type { ButtonBaseProps } from '../../types';
-
+import { stringifield } from '@yuxi-ui/util';
 const generateBaseStyles = (
   token: stringifield<ButtonDefaultToken>,
 ): {

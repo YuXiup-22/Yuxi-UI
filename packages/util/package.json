@@ -1,21 +1,7 @@
 {
-  "name": "@yuxi-ui/switch",
-  "version": "1.0.5",
-  "private": false,
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "tsup": {
-    "entry": [
-      "src/index.ts"
-    ],
-    "splitting": false,
-    "sourcemap": true,
-    "clean": true
-  },
+  "name": "@yuxi-ui/util",
+  "version": "1.0.0",
+  "main": "src/index.ts",
   "scripts": {
     "build": "tsup  --format cjs,esm --dts",
     "dev": "tsup  --format cjs,esm --dts --watch",
@@ -32,11 +18,5 @@
     "react-dom": "^19.1.0",
     "tsup": "^8.x.x",
     "typescript": "5.8.2"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@yuxi-ui/util": "workspace:^"
   }
 }
