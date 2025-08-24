@@ -1,0 +1,17 @@
+{
+  "ignores": [
+    "vitest",
+    "vite",
+    "jsdom",
+    "tsup",
+    "typescript",
+    "@storybook/*",
+    "@types/*",
+    "@yuxi-ui/util",
+    "playwright",
+    "eslint-plugin-storybook"
+  ],
+  "ignore-patterns": [
+    "dist"
+  ]
+}

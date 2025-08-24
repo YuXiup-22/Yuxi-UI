@@ -14,7 +14,9 @@
     "build-storybook": "storybook build",
     "prepare": "husky",
     "commit": "git-cz",
-    "create-component": "node scripts/create-component.js"
+    "create-component": "node scripts/create-component.js",
+    "check:deps": "pnpm -r exec depcheck",
+    "check:deps:root": "depcheck ."
   },
   "generators": {
     "component": {
@@ -36,12 +38,6 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "19.1.0",
-    "@types/react-dom": "19.1.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tsup": "^8.x.x",
-    "typescript": "5.8.2",
     "@changesets/cli": "^2.29.5",
     "@chromatic-com/storybook": "4.0.1",
     "@commitlint/cli": "^19.8.1",
@@ -53,12 +49,15 @@
     "@storybook/react-vite": "9.0.17",
     "@storybook/test": "^8.6.14",
     "@types/fs-extra": "^11.0.4",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
     "@typescript-eslint/eslint-plugin": "^8.36.0",
     "@typescript-eslint/parser": "^8.36.0",
     "@vitest/browser": "^3.2.4",
     "@vitest/coverage-v8": "^3.2.4",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
+    "depcheck": "^1.4.7",
     "eslint": "^9.30.1",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.32.0",
@@ -74,9 +73,13 @@
     "lint-staged": "^16.1.2",
     "playwright": "^1.54.1",
     "prettier": "^3.6.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "sass": "^1.89.2",
     "storybook": "^9.0.17",
+    "tsup": "^8.x.x",
     "turbo": "^2.5.4",
+    "typescript": "5.8.2",
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.4",
     "vitest": "^3.2.4"
@@ -84,6 +87,5 @@
   "packageManager": "pnpm@10.15.0",
   "engines": {
     "node": ">=18"
-  },
-  "dependencies": {}
+  }
 }
