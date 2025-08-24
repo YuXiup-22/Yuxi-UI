@@ -31,16 +31,10 @@
     "@yuxi-ui/switch": "workspace:*"
   },
   "peerDependencies": {
-    "react": ">=19",
-    "react-dom": ">=19"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@types/react": "19.1.0",
-    "@types/react-dom": "19.1.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "typescript": "5.8.2",
-    "vite": "^7.0.4",
     "vite-plugin-dts": "^4.5.4",
     "@vitejs/plugin-react": "^4.6.0"
   },
