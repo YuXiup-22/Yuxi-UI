@@ -1,3 +1,10 @@
 packages:
   - 'packages/*'
   - 'apps/*'
+
+catalog:
+  react: ^19
+  react-dom: ^19
+
+  classnames: ^2.5.1
+  antd-style: ^3.7.1
