@@ -1,5 +1,11 @@
 # @yuxi-ui/ui-library
 
+## 1.0.9
+
+### Patch Changes
+
+- 测试组件库打包
+
 ## 1.0.8
 
 ### Patch Changes
