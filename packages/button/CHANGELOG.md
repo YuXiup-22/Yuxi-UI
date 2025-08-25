@@ -1,5 +1,11 @@
 # @yuxi-ui/button
 
+## 1.0.12
+
+### Patch Changes
+
+- 组件库更新依赖
+
 ## 1.0.11
 
 ### Patch Changes

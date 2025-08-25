@@ -1,6 +1,6 @@
 {
   "name": "@yuxi-ui/button",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "private": false,
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
