@@ -13,6 +13,8 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       entryRoot: 'src',
+      rollupTypes: true,
+      aliasesExclude: ['@yuxi-ui/button'],
     }),
   ],
   build: {
@@ -32,6 +34,7 @@ export default defineConfig({
           'react-dom': 'ReactDOM',
           '@yuxi-ui/button': 'MyOrgButton', // 给外部化的包提供全局名称（UMD 格式可能需要）
         },
+
         // chunkFileNames: `[name].mjs`,
         // assetFileNames: `[name].[ext]`,
       },

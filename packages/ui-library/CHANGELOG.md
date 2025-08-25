@@ -1,5 +1,11 @@
 # @yuxi-ui/ui-library
 
+## 1.0.11
+
+### Patch Changes
+
+- d.ts打包内容引用包路径问题
+
 ## 1.0.10
 
 ### Patch Changes
