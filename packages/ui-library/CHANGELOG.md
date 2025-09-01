@@ -1,5 +1,12 @@
 # @yuxi-ui/ui-library
 
+## 1.0.13
+
+### Patch Changes
+
+- 修改cjs进入文件格式
+- a16addb: switch调整包引入，ui-library打包配置
+
 ## 1.0.12
 
 ### Patch Changes

@@ -1,11 +1,8 @@
 {
   "name": "@yuxi-ui/ui-library",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "private": false,
   "type": "module",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "types": "es/index.d.ts",
   "files": [
     "es",
     "lib"
@@ -14,7 +11,7 @@
     ".": {
       "types": "./es/index.d.ts",
       "import": "./es/index.js",
-      "require": "./lib/index.js"
+      "require": "./lib/index.cjs"
     }
   },
   "scripts": {
