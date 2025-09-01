@@ -1,5 +1,11 @@
 # @yuxi-ui/switch
 
+## 1.0.8
+
+### Patch Changes
+
+- switch调整包引入，ui-library打包配置
+
 ## 1.0.7
 
 ### Patch Changes

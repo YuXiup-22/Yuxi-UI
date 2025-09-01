@@ -1,6 +1,6 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import classnames from 'classnames';
-import { ConfigContext } from '../../config-provider/src/index';
+import { ConfigContext } from '@yuxi-ui/config-provider';
 import type { SwitchProps } from './type';
 import { useSwitchStyles } from './style/index';
 import { useMergedValue } from '@yuxi-ui/util';

@@ -1,8 +1,6 @@
 import type { SwitchDefaultToken } from './theme';
 import type { CSSObject } from 'antd-style';
-type stringifield<T> = {
-  [k in keyof T]: string;
-};
+import type { stringifield } from '@yuxi-ui/util';
 const genSwitchStyle = (
   token: stringifield<SwitchDefaultToken>,
   prefixCls: string,
