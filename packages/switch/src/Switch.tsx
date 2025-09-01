@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import classnames from 'classnames';
 import { ConfigContext } from '@yuxi-ui/config-provider';
 import type { SwitchProps } from './type';
