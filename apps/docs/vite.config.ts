@@ -1,7 +1,7 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-
+import { resolve, normalize } from 'path';
 // https://vite.dev/config/
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -39,6 +39,14 @@ export default defineConfig({
           },
           setupFiles: ['.storybook/vitest.setup.ts'],
         },
+      },
+    ],
+  },
+  resolve: {
+    alias: [
+      {
+        find: /^@yuxi-ui\/(.*)$/,
+        replacement: normalize(resolve(__dirname, '../../packages/$1/src')),
       },
     ],
   },
