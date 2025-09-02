@@ -19,8 +19,10 @@ export default tseslint.config([
       ecmaVersion: 2020,
       globals: globals.browser,
       parserOptions: {
+        tsconfigRootDir: __dirname, //明确指定是docs下面的tsconfig
         project: ['./tsconfig.json'],
       },
     },
+    parserOptions: {},
   },
 ]);
