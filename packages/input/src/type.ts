@@ -37,3 +37,10 @@ export interface BaseInputProps extends InputProps {
   handleReset: (e: MouseEvent<HTMLButtonElement>) => void;
   triggerFocus: () => void;
 }
+interface VisibilityToggle {
+  visible?: boolean;
+  onVisibleChange?: () => void;
+}
+export interface PasswordProps extends InputProps {
+  visibilityToggle?: boolean | VisibilityToggle;
+}
